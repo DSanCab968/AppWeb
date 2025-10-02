@@ -335,6 +335,50 @@
 
         #DO...WHILE...
 
+        /*
+        do{}while()
+        */
+
+        /*
+
+         function numBet2(): void{
+            $num = 50;
+            do{
+
+                if($num % 2 ==0){
+
+                    echo $num," ";
+                }
+                    
+                $num++;
+
+            }
+            while($num <= 80)}
+            
+
+            echo "<p>",numBet2(),"</p>";
+
+            ################################
+
+
+            function intBet2(): void{
+            $lol = 17;
+            do{ echo $lol," ";
+                    
+                $lol--;
+            }
+            while($lol <= 17 && $lol >= -17)}
+
+            echo "<p>",intBet(),"</p>";
+            
+            ################################
+
+            #acabar
+
+            */
+             
+
+
         
     ?>
 

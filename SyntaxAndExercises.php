@@ -324,14 +324,14 @@
 
 
         #The multiplication table of 6
-
+        /*
         function tabSix(): void{
                 
             #acabar
             }
 
         echo "<p>",tabSix(),"</p>";
-
+        */
 
         #DO...WHILE...
 
@@ -369,7 +369,7 @@
             }
             while($lol <= 17 && $lol >= -17);}
 
-            echo "<p>",intBet(),"</p>";
+            echo "<p>",intBet2(),"</p>";
             
             ################################
 

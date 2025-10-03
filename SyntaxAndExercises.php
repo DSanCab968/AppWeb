@@ -339,7 +339,7 @@
         do{}while()
         */
 
-        /*
+        
 
          function numBet2(): void{
             $num = 50;
@@ -353,7 +353,7 @@
                 $num++;
 
             }
-            while($num <= 80)}
+            while($num <= 80);}
             
 
             echo "<p>",numBet2(),"</p>";
@@ -361,21 +361,29 @@
             ################################
 
 
-            function intBet2(): void{
+        function intBet2(): void{
             $lol = 17;
             do{ echo $lol," ";
                     
                 $lol--;
             }
-            while($lol <= 17 && $lol >= -17)}
+            while($lol <= 17 && $lol >= -17);}
 
             echo "<p>",intBet(),"</p>";
             
             ################################
 
-            #acabar
+        function tabSix2(): void{
+            $i = 0;
+            do{
+            $res = 6*$i;
+            echo "<p>6 * ",$i," = ",$res,"</p>";
+            $i++;
+            }while($i <= 10);}
 
-            */
+            echo "<p>",tabSix2(),"</p>";
+
+            
              
 
 

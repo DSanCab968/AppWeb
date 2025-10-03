@@ -168,9 +168,27 @@
 
         #12. Given an integer, deliver all its divisors.
 
+        $numDivis = 20;
+
+        for($i = 1;$i <= $numDivis;$i++){
+
+            if($numDivis % $i == 0){
+
+
+                echo $i," ";
+                
+
+            }
+
+        }
+
         #13. Given an integer, deliver a message to point out whether it is prime or not.
 
+
+
         #14. Given a number, deliver all its prime divisors.
+
+
 
         /*15. Deliver the first 20 terms of the Fibonacci Sequence. This sequence begins by 0 and 1, and
         the rest of the terms can be calculated adding the two preceding ones.
@@ -178,7 +196,13 @@
             a0 = 0, a1 = 1, an = an-1 + an-2
 
         */
+
+
+
         #16. Given an array of numbers, deliver the average, the biggest and the smallest.
+
+
+
                     
                     
 

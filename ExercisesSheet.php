@@ -34,10 +34,10 @@
       
         #mirar en carpeta compartida
 
-        #3. Given a number, deliver its absolute value as an output.
+        #3. Given a numInt$numInt, deliver its absolute value as an output.
 
-        $number = -6;
-        echo "<p>",abs($number),"</p>";
+        $numInt = -6;
+        echo "<p>",abs($numInt),"</p>";
 
         #4. Given two numbers, deliver a message that points out the biggest one.
 
@@ -83,8 +83,8 @@
         #7. Given three numbers, deliver an output in which they appear ordered from the biggest to the smallest.
 
         $aa = 100;
-        $bb = 4;
-        $cc = 76;
+        $bb = 6;
+        $cc = 87;
 
         if ($aa >= $bb && $aa >= $cc) {
             #$aa es el mayor
@@ -184,9 +184,43 @@
 
         #13. Given an integer, deliver a message to point out whether it is prime or not.
 
+      
+        $numInt = 13;
 
+        if ($numInt <= 1){
 
-        #14. Given a number, deliver all its prime divisors.
+            echo "<p>",$numInt," no es un número primo.</p>";
+
+        }elseif($numInt == 2){
+
+            echo "<p>",$numInt," es un número primo.</p>";
+
+        }elseif($numInt % 2 == 0){
+
+            echo "<p>",$numInt," no es un número primo.</p>";
+
+        }else{
+
+            $esPrimo = true;
+            $sqrt = (int) sqrt($numInt);
+            for ($i = 3; $i <= $sqrt; $i += 2){
+                if ($numInt % $i == 0){
+                    $esPrimo = false;
+                    break;
+                }
+            }
+            if($esPrimo){
+
+                echo "<p>",$numInt," es un número primo.</p>";
+
+            }else{
+
+                echo "<p>",$numInt," no es un número primo.</p>";
+            }
+        }
+     
+
+        #14. Given a numInt$numInt, deliver all its prime divisors.
 
 
 

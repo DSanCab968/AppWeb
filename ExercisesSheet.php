@@ -175,12 +175,13 @@
             if($numDivis % $i == 0){
 
 
-                echo $i," ";
-                
+                echo $i," ";  
 
             }
 
         }
+
+        ### a partir de aqui puro chatgpt
 
         #13. Given an integer, deliver a message to point out whether it is prime or not.
 
@@ -220,8 +221,38 @@
         }
      
 
-        #14. Given a numInt$numInt, deliver all its prime divisors.
+        #14. Given a $numInt14, deliver all its prime divisors.
 
+        
+        $numInt14 = 84; 
+        $num = abs($numInt14); #porsi es nagativo
+        $primes = [];
+
+        #
+        if ($num % 2 === 0) {
+            $primes[] = 2;
+            while ($num % 2 === 0) {
+                $num /= 2;
+            }
+        }
+
+        #
+        for ($i = 3; $i <= sqrt($num); $i += 2) {
+            if ($num % $i === 0) {
+                $primes[] = $i;
+                while ($num % $i === 0) {
+                    $num /= $i;
+                }
+            }
+        }
+
+        #Si queda un número primo mayor que 2
+
+        if ($num > 2) {
+            $primes[] = $num;
+        }
+
+        print_r($primes);
 
 
         /*15. Deliver the first 20 terms of the Fibonacci Sequence. This sequence begins by 0 and 1, and
@@ -231,17 +262,33 @@
 
         */
 
+        
+        $numOfTerms = 20;
+        $fib = [0, 1]; 
+
+        for ($i = 2; $i < $numOfTerms; $i++) {
+            $fib[$i] = $fib[$i - 1] + $fib[$i - 2];
+        }
+
+        // Display the sequence
+        print_r($fib);
+        
 
 
         #16. Given an array of numbers, deliver the average, the biggest and the smallest.
 
 
+        $numArray = [5, 10, 3, 8, 12, 7];
 
-                    
-                    
+        $avg = array_sum($numArray) / count($numArray);
+        $max = max($numArray);
+        $min = min($numArray);
 
+        echo "<p>Average: ", $average,"</p>";
+        echo "<p>Maximum: ", $max,"</p>";
+        echo "<p>Minimum: ", $min,"</p>";
+    
 
-        
     ?>
 
 </body>

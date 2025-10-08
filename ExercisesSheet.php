@@ -221,22 +221,24 @@
         }
      
 
-        #14. Given a $numInt14, deliver all its prime divisors.
+        #14. Given a $number, deliver all its prime divisors.
 
         
         $numInt14 = 84; 
         $num = abs($numInt14); #porsi es nagativo
-        $primes = [];
+        $primes = []; #array pa guardar los divisores
 
-        #
-        if ($num % 2 === 0) {
+        #estudiamos el 2 para evr si se añade al array, si
+        #el resto de dividir entre 2 con el while deja de ser 0, pillamos
+        #dicho numero para seguirlo evaluando luego
+        if ($num % 2 === 0) { 
             $primes[] = 2;
             while ($num % 2 === 0) {
                 $num /= 2;
             }
         }
 
-        #
+        #???
         for ($i = 3; $i <= sqrt($num); $i += 2) {
             if ($num % $i === 0) {
                 $primes[] = $i;
@@ -253,6 +255,28 @@
         }
 
         print_r($primes);
+
+        /* otra forma
+
+        
+            $numero = 84;
+            $numero = abs($numero); // por si es negativo
+            $primos = [];
+
+            for ($i = 2; $i <= $numero; $i++) {
+                // Mientras $i sea divisor de $numero
+                if ($numero % $i == 0) {
+                    $primos[] = $i; // se guarda el divisor primo
+                    // Eliminar todos los múltiplos de ese divisor
+                    while ($numero % $i == 0) {
+                        $numero /= $i;
+                    }
+                }
+            }
+
+            print_r($primos);
+        */
+
 
 
         /*15. Deliver the first 20 terms of the Fibonacci Sequence. This sequence begins by 0 and 1, and

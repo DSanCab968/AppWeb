@@ -384,8 +384,15 @@
             echo "<p>",tabSix2(),"</p>";
 
             
-             
+        #### array
 
+    
+        $sales = [45.3, 254, 3.8, 320.077, 98.75, 43.230, 21,130, 245.0320, 3.34, 4.5, 15.25, 20.75, 1];
+
+        $total = array_sum($sales);
+
+        echo "<p>Total sales for the last fortnight: ", round($total,2) ,"€.";
+    
 
         
     ?>

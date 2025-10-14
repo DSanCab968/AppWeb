@@ -311,7 +311,38 @@
         echo "<p>Average: ", $average,"</p>";
         echo "<p>Maximum: ", $max,"</p>";
         echo "<p>Minimum: ", $min,"</p>";
+
+
+        #sin funciones
+
+        #AVG, max y min
+
+        $arr1 = array(3,5,1);
     
+        $tot = 0;
+        $nNums = 0;
+        $max = $arr1[0];
+        $min = $arr1[0];
+
+        foreach($arr1 as $v1){
+
+            if($max < $v1){
+
+                $max= $v1;
+            }elseif($min > $v1){
+
+                $min = $v1;
+            }
+           
+            $tot = $tot + $v1;
+            $nNums ++;
+
+        }
+
+        echo "<p>MAX: ", $max,".</p>",
+             "<p>MIN: ", $min,".</p>",
+             "<p>AVG: ", $tot/$nNums,".</p>";
+
 
     ?>
 

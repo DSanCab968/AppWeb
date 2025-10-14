@@ -384,15 +384,55 @@
             echo "<p>",tabSix2(),"</p>";
 
             
-        #### array
+        ####ARRAYS######
 
+        $drinks = array("Coffee", "Tea", "Water", "Beer", "Wine", "Soft drink");
+        echo "<h1>DRINKS</h1>";
+        echo "<ul>";
+        foreach ($drinks as $b) {
+            echo "<li>", $b, "</li>";
+        }
+        echo "</ul>";
+
+        var_dump($drinks);
+
+        #foreach
+
+        $computers = array("A210" => 28, "A211" => 30, "A212" => 32, "A213" => 28);
+        echo "<table> <caption>COMPUTERS IN CLASSROOMS</caption>";
+        echo "<tr> <th>Classroom</th> <th>Number of computers</th></tr>";
+        foreach ($computers as $classroom => $numcomputers) {
+            echo "<tr><td>", $classroom, "</td><td>", $numcomputers, "</td></tr>";
+        }
+        echo "</table>";
+
+
+        #Ej diapos
+
+        /*A store has saved its last fortnight sales in an array. Write a
+        script to calculate the total amount and to carry it to the
+        output.*/
+
+        #con funcion
     
         $sales = [45.3, 254, 3.8, 320.077, 98.75, 43.230, 21,130, 245.0320, 3.34, 4.5, 15.25, 20.75, 1];
 
         $total = array_sum($sales);
 
         echo "<p>Total sales for the last fortnight: ", round($total,2) ,"€.";
+
+        #con foreach
+
+        $sales = array(45.3, 254, 3.8, 320.077, 98.75, 43.230, 21,130, 245.0320, 3.34, 4.5, 15.25, 20.75, 1);
     
+        $tot = 0;
+
+        foreach($sales as $sale){
+
+            $tot = $tot + $sale;
+        }
+
+        echo "<p>Total sales for the last fortnight: ", $tot, "€.";
 
         
     ?>

@@ -434,6 +434,149 @@
 
         echo "<p>Total sales for the last fortnight: ", $tot, "€.";
 
+        #Write a script that uses two 5 x 5 matrices and two functions to
+        #create:
+        #1. The transposed matrix.
+        #2. The sum of both matrices.
+
+        #1
+
+       $m1 = [
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 1],
+            [13, 6, 8, 9, 1],
+            [4, 2, 7, 8, 5],
+            [9, 5, 12, 1, 4]
+        ];
+
+        $m2 = [
+            [4, 6, 5, 4, 7],
+            [6, 7, 8, 9, 1],
+            [13, 6, 8, 9, 1],
+            [34, 5, 7, 2, 1],
+            [9, 5, 12, 1, 4]
+        ];
+
+        function mTrans($m1){
+
+            $transpuesta = [];
+            for ($fila=0;$fila<count($m1);$fila++){
+
+                for($columna=0;$columna<count($m1[$fila]);$columna++){
+
+                    $transpuesta[$columna][$fila] = $m1[$fila][$columna];
+                }
+            };
+
+            return $transpuesta;
+
+        }
+
+        function sumMat($m1, $m2) {
+            $suma = [];
+            for ($i = 0; $i < count($m1); $i++) {
+                for ($j = 0; $j < count($m1[$i]); $j++) {
+                    $suma[$i][$j] = $m1[$i][$j] + $m2[$i][$j];
+                }
+            }
+            return $suma;
+        }
+
+        #Para imprimirla
+        $transpuesta = mTrans($m1);
+        $suma = sumMat($m1, $m2);
+
+        function printMatrix($matriz) {
+            echo "<table border='1' cellpadding='5'>";
+            foreach ($matriz as $fila) {
+                echo "<tr>";
+                foreach ($fila as $valor) {
+                    echo "<td>$valor</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</table><br>";
+        }
+
+
+        echo "<h3>Matriz 1:</h3>";
+        printMatrix($m1);
+
+        echo "<h3>Matriz 2:</h3>";
+        printMatrix($m2);
+
+        echo "<h3>Matriz transpuesta de M1:</h3>";
+        printMatrix($transpuesta);
+
+        echo "<h3>Suma: </h3>";
+        printMatrix($suma);
+
+
+        #Use the code in slide 96 to get the last day with the highest
+        #maximum temperature of the month and carry it to the output
+        #document preceded by a message.
+
+        #(hacer)
+
+
+        #la del array tridimensional
+        
+        $tridiArr = [
+            
+            [array(50,34,71)],
+            
+            [array(20,66,12)],
+    
+            [array(60,24,56)]
+        ];
+
+        $tot = 0;
+
+        foreach ($tridiArr as $dias) {
+            foreach ($dia as $sesiones) {
+                foreach ($sesion as $personas) {
+                    $tot += $personas;
+                }
+            }
+        }
+
+        echo "<p>La audiencia total del antiguo cine durante el último fin de semana fue de ",$tot," personas.</p>";
+        
+        #Write a script that points out if a string is a palindrome. A
+        #palindrome is a sequence of characters that reads the same
+        #backwards as forwards, such as madam or racecar.
+
+
+
+
+        function palindromo($palabra){
+
+            $reversed="";
+            for($i=strlen($palabra);$i>0;$i--){
+                $reversed .= $palabra[$i];
+            }
+
+            if($reversed==$palabra){
+
+                return "Palindromo";
+            }else{
+
+                return "No palindromo";
+            }
+
+        }
+        
+        $palabra= "patata";
+        palindromo($palabra)
+        
+
+        
+    
+
+
+
+
+
         
     ?>
 

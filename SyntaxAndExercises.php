@@ -521,53 +521,151 @@
 
         #la del array tridimensional
         
+
         $tridiArr = [
-            
-            [array(50,34,71)],
-            
-            [array(20,66,12)],
-    
-            [array(60,24,56)]
+            [50, 34, 71],
+            [20, 66, 12],
+            [60, 24, 56]
         ];
 
         $tot = 0;
 
-        foreach ($tridiArr as $dias) {
-            foreach ($dia as $sesiones) {
-                foreach ($sesion as $personas) {
-                    $tot += $personas;
-                }
+        foreach ($tridiArr as $dia) {
+            foreach ($dia as $personas) {
+                $tot += $personas;
             }
         }
 
-        echo "<p>La audiencia total del antiguo cine durante el último fin de semana fue de ",$tot," personas.</p>";
+        echo "<p>La audiencia total del antiguo cine durante el último fin de semana fue de $tot personas.</p>";
+
+
         
         #Write a script that points out if a string is a palindrome. A
         #palindrome is a sequence of characters that reads the same
         #backwards as forwards, such as madam or racecar.
 
 
+        #revisar no funciona
 
+        function palindromo($palabra) {
+            $reversed = "";
 
-        function palindromo($palabra){
-
-            $reversed="";
-            for($i=strlen($palabra);$i>0;$i--){
+            // Recorremos desde el último carácter hasta el primero
+            for ($i = strlen($palabra) - 1; $i >= 0; $i--) {
                 $reversed .= $palabra[$i];
             }
 
-            if($reversed==$palabra){
+            if ($reversed == $palabra) {
+                return "Palíndromo";
+            } else {
+                return "No palíndromo";
+            }
+        }
 
-                return "Palindromo";
-            }else{
+        $palabra = "patata";
+        echo palindromo($palabra);
 
-                return "No palindromo";
+        #Write a script that points out the number of times that a string is contained inside another string.
+
+        
+        function contarOcurrencias($texto, $buscar) {
+            $contador = 0;
+            $pos = 0;
+
+           
+            while (($pos = strpos($texto, $buscar, $pos)) !== false) {
+                $contador++;
+                $pos += strlen($buscar);
             }
 
+            return $contador;
         }
+
+        $texto = "banana";
+        $buscar = "an";
+
+        echo "La cadena '$buscar' aparece " . contarOcurrencias($texto, $buscar) . " veces en '$texto'.";
+
+        /*
+        A teacher recorded the marks (integers between 1 and 10) got by
+        her 20 students (named like this: Fernández Gil, María) in a
+        project, a class activity and an exam. Write a script to deliver a
+        table to show the students’ term marks bearing in mind that:
+        ●
+        ●
+        The students’ names will appear like this: María Fernández Gil.
+        (Use a function to get this change)
+        The class activity was 15% of the final mark, the project was 35%
+        and the exam was 50%.
+        */
         
-        $palabra= "patata";
-        palindromo($palabra)
+
+
+        #Invertir nombre y apellidos
+
+        function formatearNombre($nombreCompleto) {
+    
+            $partes = explode(',', $nombreCompleto);
+            $nombre = trim($partes[1]);
+            $apellidos = trim($partes[0]);
+
+            return "$nombre $apellidos";
+        }
+
+        #Array con arrays de datos
+        $estudiantes = [
+            ["Fernández Gil, María", 8, 7, 9],
+            ["López Ruiz, Antonio", 6, 5, 7],
+            ["Sánchez Díaz, Lucía", 9, 8, 10],
+            ["Martín Torres, Pedro", 5, 6, 6],
+            ["Gómez Pérez, Laura", 10, 9, 10],
+            ["Ramírez Soto, José", 7, 8, 8],
+            ["Moreno Rivas, Ana", 9, 7, 8],
+            ["Navarro Cruz, Javier", 6, 5, 6],
+            ["Vargas León, Carmen", 8, 9, 9],
+            ["Iglesias Mora, Sara", 7, 6, 7],
+            ["Domínguez Gil, Pablo", 6, 6, 8],
+            ["Prieto Lázaro, Elena", 9, 8, 10],
+            ["Hernández Ruiz, Marcos", 5, 7, 6],
+            ["García Salas, Laura", 10, 10, 10],
+            ["Suárez Campos, David", 7, 8, 7],
+            ["Blanco Pérez, Lucía", 8, 7, 9],
+            ["Ortega Gómez, Raúl", 6, 6, 7],
+            ["Delgado Martín, Alba", 9, 9, 10],
+            ["Cabrera Ortiz, Carlos", 7, 6, 7],
+            ["Reyes Torres, Julia", 8, 8, 9]
+        ];
+
+        #Tabla
+        echo "<table border='1' cellpadding='6' cellspacing='0'>";
+        echo "<tr><th>Student</th><th>Project (35%)</th><th>Class Activity (15%)</th><th>Exam (50%)</th><th>Final Mark</th></tr>";
+
+        foreach ($estudiantes as $alumno) {
+            $nombre = formatearNombre($alumno[0]);
+            $proyecto = $alumno[1];
+            $actividad = $alumno[2];
+            $examen = $alumno[3];
+
+            $final = ($proyecto * 0.35) + ($actividad * 0.15) + ($examen * 0.50);
+
+            echo "<tr>";
+            echo "<td>$nombre</td>";
+            echo "<td>$proyecto</td>";
+            echo "<td>$actividad</td>";
+            echo "<td>$examen</td>";
+            echo "<td>" . number_format($final, 2) . "</td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+
+
+
+
+
+
+
+
         
 
         

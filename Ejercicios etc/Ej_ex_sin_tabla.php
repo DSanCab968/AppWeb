@@ -10,21 +10,6 @@
 
     <?php 
 
-
-        /*
-        A teacher recorded the marks (integers between 1 and 10) got by
-        her 20 students (named like this: Fernández Gil, María) in a
-        project, a class activity and an exam. Write a script to deliver a
-        table to show the students’ term marks bearing in mind that:
-        ●
-        ●
-        The students’ names will appear like this: María Fernández Gil.
-        (Use a function to get this change)
-        The class activity was 15% of the final mark, the project was 35%
-        and the exam was 50%.
-        */
-
-
         #array con estudiantes y notas random
 
         $estudiantes = [
@@ -66,18 +51,19 @@
 
         }
 
-        foreach ($estudiantes as $alumno) {
-        $nombre = formatName($alumno[0]);
-        $proyecto = $alumno[1];
-        $actividad = $alumno[2];
-        $examen = $alumno[3];
-        $notaFinal = ($proyecto*0.35)+($actividad*0.15)+($examen*0.5);
 
-        echo "<p>Alumno: ",$nombre," | Proyecto:  ",$proyecto," | Actividad: ",$actividad," | Examen: ",$examen," | Nota Final: ",$notaFinal,"</p>";
-    
+        foreach($estudiantes as $alumno){
+            $nombre = formatName($alumno[0]);
+            $proyecto = $alumno[1];
+            $actividad = $alumno[2];
+            $examen = $alumno[3];
+            $notaFinal = ($proyecto*0.35)+($actividad*0.15)+($examen*0.5);
+        
+        echo "<p>Alumno: ",$nombre," | Proyecto:  ",$proyecto," | Actividad: ",$actividad," | Examen: ",$examen," | Nota Final: ",$notaFinal," </p>";
         }
 
 
+    
     ?>
 
 </body>

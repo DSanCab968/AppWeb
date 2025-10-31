@@ -544,15 +544,13 @@
         #palindrome is a sequence of characters that reads the same
         #backwards as forwards, such as madam or racecar.
 
-
-        #revisar no funciona
+        #if we use strrev() le da la vuelta y es ez
 
         function palindromo($palabra) {
             $reversed = "";
 
-            // Recorremos desde el último carácter hasta el primero
             for ($i = strlen($palabra) - 1; $i >= 0; $i--) {
-                $reversed .= $palabra[$i];
+                $reversed .=  $palabra[$i];
             }
 
             if ($reversed == $palabra) {
@@ -562,7 +560,7 @@
             }
         }
 
-        $palabra = "patata";
+        $palabra = "ana";
         echo palindromo($palabra);
 
         #Write a script that points out the number of times that a string is contained inside another string.
@@ -580,23 +578,10 @@
             return $cont;
         }
 
-        $cadena = "banana";
+        $cadena = "banana banana ";
         $objetivo = "an";
 
-        echo "<p>La cadena ",$objetivo," aparece ",conteoOcurr($cadena, $objetivo)," veces en ", $cadena," </p>";
-
-        /*
-        A teacher recorded the marks (integers between 1 and 10) got by
-        her 20 students (named like this: Fernández Gil, María) in a
-        project, a class activity and an exam. Write a script to deliver a
-        table to show the students’ term marks bearing in mind that:
-        ●
-        ●
-        The students’ names will appear like this: María Fernández Gil.
-        (Use a function to get this change)
-        The class activity was 15% of the final mark, the project was 35%
-        and the exam was 50%.
-        */
+        echo "<p>La cadena ",$objetivo," aparece ",conteoOcurr($cadena, $objetivo)," veces en la cadena principal.</p>";
         
 
         #ej nico

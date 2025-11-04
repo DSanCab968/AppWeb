@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Telebirria</title>
+</head>
+<body>
+
+    <H1>TELEBIRRIA </H1>
+    <H3>PARA REALIZAR SU PEDIDO, RELLENE EL FORMULARIO</H3>
+    <form action= "mailto:dsancab968@g.educaand.es" method="post">
+        <fieldset>
+            <legend>Datos personales y de envio</legend>    
+            <div><label>Nombre*<input type="text" required="Nombre"/></label></div> <!--es un contenedor que hara que sea una linea independiente-->
+            <div><label>Apellidos*<input type="text" required="Apellidos"/></label></div><!--el * abrevia los tags abre y cierra pero aqui lo usamos pa obligatoriedad-->
+            <div><label>Domicilio*<input type="text" required="Domicilio"/></label></div>
+            <div><label>Localidad*<input type="text" required="Localidad"/></label></div>
+            <div><label>Codigo Postal*<input type="text" required="Codigo Postal" min="1000" max="52999"/></label></div>
+            <div><label>Telefono*<input type="text" required="Nombre"/></label></div>
+            <div><label>E-mail<input type="email"/></label></div>
+        </fieldset>
+        <fieldset>
+            <legend>Elija la opcion de entrega</legend>    
+            <div><input type="radio" name="entrega" value="local" checked="checked" id="rec_loc"/><label for="rec_loc">Recoger en el local</label></div><!--le ponemos el mismo nombre para uqe permita o uno u otra-->
+            <div><input type="radio" name="entrega" value="domicilio" id="env_dom"/><label for="env_dom">Enviar al domicilio</label></div>
+        </fieldset>
+        <fieldset>
+            <legend>¿Quiere que le enviemos nuestras ofertas?</legend>    
+            <div><input type="checkbox" name="enviar" value="domicilio" checked="checked" id="oferta_dom"/><label for="oferta_dom">Enviar al domicilio</label></div>
+            <div><input type="checkbox" name="enviar" value="email" checked="checked" id="oferta_email"/><label for="oferta_email">Enviar al email</label></div>
+        </fieldset>
+
+            <!--hasta aqui corregido-->
+
+        <fieldset>
+            <legend>Elija su menu</legend>    
+            <div><label>Tamaño del bocadillo</label></div>
+            <select size="4" name="tamanho">
+                <option value="pequenho">pequeño</option>
+                <option value="mediano" selcted="selected">mediano</option>
+                <option value="grande">grande</option>
+                <option value="enorme">enorme</option>
+            </select>
+
+            <div><label>Contenido del bocadillo</label></div>
+            
+            <select size="4" multiple="multiple" name="ingredients">
+                <option value="anchoas">anchoas</option>
+                <option value="calamares" >calamares</option>
+                <option value="mejillones" >mejillones</option>
+                <option value="jamon" >jamon</option>
+                <option value="huevos">huevos</option>
+                <option value="caviar" >caviar</option>
+                <option value="lechuga" >lechuga</option>
+                <option value="blue label" >blue label</option>
+            </select>
+            <div><label>Puede añadir alguna sugerencia</label></div>
+            <textarea name="sugerencias" rows="10" cols="50" placeholder="Por ejemplo que calienten el pan, etc"></textarea>
+            <!--carefuuul-->
+            <div><input type="submit" value="Enviar datos"/></div>
+        </fieldset>
+
+        
+
+    </form>   
+</body>
+</html>

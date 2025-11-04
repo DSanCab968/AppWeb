@@ -53,7 +53,7 @@
         #funcion para cambiar formato del nombre
         #explode para separar por comas y asi tengo un array
 
-        #sin tabla
+        
 
         function formatName($nombreFull){
 
@@ -84,10 +84,7 @@
         $examen = $alumno[3];
         $notaFinal = ($proyecto*0.35)+($actividad*0.15)+($examen*0.5);
 
-        #echo "<p>Alumno: ",$nombre," | Proyecto:  ",$proyecto," | Actividad: ",$actividad," | Examen: ",$examen," | Nota Final: ",$notaFinal," </p>";
-    
-    
-        #con tabla
+       
 
             echo "<tr>
                     <td>$nombre</td>

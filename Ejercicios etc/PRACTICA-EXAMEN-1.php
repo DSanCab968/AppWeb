@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exam practice</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Arial, sans-serif;
+            }
+
+            header {
+                background-color: #1f4e79;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+
+            main {
+                background-color: #f2f2f2;
+                padding: 20px;
+                min-height: 300px;
+            }
+
+            footer {
+                background-color: #333;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                position: relative;
+            }
+
+            h1, h2 {
+                margin-bottom: 10px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Repaso examen 1 php</h1>
+        </header>
+        <main>
+            <h2>Ejercicios</h2>
+            <p>1. Given the dividend, the divisor, the quotient and the remainder of a division, check if it is
+                correct.</p>
+            <?php
+
+                $D= 10;
+                $d= 5;
+                $c= 2;
+                $r= 0;
+
+                if($D/$d==$c and $D%$d == $r){
+
+                    echo "<p>Ta bien</p>";
+                }else{
+
+                    echo "<p>Ta mal</p>";
+                }
+            ?>
+            <p>2. Given the coefficients of a second degree equation, deliver its roots.</p>
+            <?php
+
+                echo "<p>Este me da flojera</p>";
+     
+            ?>
+            <p>3. Given a number, deliver its absolute value as an output.</p>
+            <?php
+
+                $num = -3;
+
+                echo "<p>El valor absoluto es: ",abs($num),"</p>";
+     
+            ?>
+            <p>4. Given two numbers, deliver a message that points out the biggest one.</p>
+            <?php
+
+                $num1 = 3;
+                $num2 = 5;
+                
+                if($num1 > $num2){
+
+                    echo "<p>El mayor es ",$num1,"</p>";
+                }else{
+
+                    echo "<p>El mayor es ",$num2,"</p>";
+                }
+                    
+            ?>
+            <p>5. Enhance the previous code in order to show if both numbers are the same.</p>
+            <?php
+
+                $num1 = 3;
+                $num2 = 3;
+                
+                if($num1 > $num2){
+
+                    echo "<p>El mayor es ",$num1,"</p>";
+                }elseif($num1 < $num2){
+
+                    echo "<p>El mayor es ",$num2,"</p>";
+                }else{
+
+                    echo "<p>Son iguales</p>";
+                }
+                    
+            ?>
+            <p>6. Given two numbers, deliver a message to show them ordered from the smallest to the
+            biggest.</p>
+            <?php
+                $a = 8;
+                $b = 5;
+                
+                if($a > $b){
+
+                    echo "<p>",$b," , ",$a,"</p>";
+                }else{
+
+                    echo "<p>",$a," , ",$b,"</p>";
+                }
+                    
+            ?>
+            <p>7. Given three numbers, deliver an output in which they appear ordered from the biggest to the
+            smallest.</p>
+            <?php
+                echo "<p>Forma larga:</p>";
+
+                $a = 8;
+                $b = 5;
+                $c = 7;
+                
+                if($a >= $b and $a >= $c){
+                    if($b >= $c){
+                        echo "<p>",$a," > ",$b," > ",$c,"</p>";
+                    }else{
+                        echo "<p>",$a," > ",$c," > ",$b,"</p>";
+                    }
+                }elseif($b >= $a and $b >= $c){
+                    if($a >= $c){
+                        echo "<p>",$b," > ",$a," > ",$c,"</p>";
+                    }else{
+                        echo "<p>",$b," > ",$c," > ",$a,"</p>";
+                    }
+                    
+                }else{
+                    if($b >= $a){
+                        echo "<p>",$c," > ",$b," > ",$a,"</p>";
+                    }else{
+                        echo "<p>",$c," > ",$a," > ",$b,"</p>";
+                    }
+
+                }
+
+                echo "<p>Forma corta:</p>";
+
+                $numeros = [];
+                $numeros[0] = $a;
+                $numeros[1] = $b;
+                $numeros[2] = $c;
+
+                arsort($numeros);
+                echo "<p>",implode(" > ",$numeros),"</p>";
+     
+            ?>
+
+        </main>
+        <footer>
+            <p>Daniel Sánchez Cabello</p>
+            <p>2º ASIR B</p>
+        </footer>
+
+    </body>
+
+
+</html>

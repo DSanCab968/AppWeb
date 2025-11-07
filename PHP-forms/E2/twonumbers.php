@@ -20,8 +20,9 @@
         echo "<p>MULTIPLICACIÓN: ",$mult,"</p>";
         echo "<p>DIVISIÓN: ",$div,"</p>";
         echo "<p>MÓDULO: ",$mod,"</p>";
- 
-    
+
+        echo "<a href= './twonumbers.html'>Go back</a>";
+
         ?>
     
     </body>

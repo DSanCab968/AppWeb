@@ -7,8 +7,14 @@
 
         <?php 
         
+            #Solo 1 rol
+
             $name = $_GET["name"];
-            $role = $_GET["role"];
+            $role[] = $_GET["role[]"];
+            $email = $_GET["email"];
+            $num = count($_GET);
+
+       
 
             if($role == "Service Staff"){
 
@@ -17,7 +23,9 @@
 
                 echo "<p>User ",$name," is a ",$role,".</p>";
             }
- 
+
+            echo "<p>User e-mail is: ",$email,"</p>";
+
     
         ?>
     

@@ -9,8 +9,20 @@
             <input type="submit"/>
         </form>
         <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            echo $_POST['name'];
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            echo "<table border='1' cellspacing='0' cellpadding='5'>";
+            echo "<tr><th>Index</th><th>Value</th></tr>";
+
+            foreach ($_SERVER as $key => $value) {
+                echo "<tr>
+                        <td>" . htmlspecialchars($key) . "</td>
+                        <td>" . htmlspecialchars((string)$value) . "</td>
+                    </tr>";
+            }
+
+            echo "</table>";
+            
         }
         ?>
     </body>

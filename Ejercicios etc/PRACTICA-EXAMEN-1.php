@@ -167,8 +167,162 @@
 
                 arsort($numeros);
                 echo "<p>",implode(" > ",$numeros),"</p>";
+            
      
             ?>
+            <p>8. Given three numbers, deliver an output to point out the biggest and the smallest.</p>
+            <?php
+                $a = 9;
+                $b = 9;
+                $c = 9;
+
+                $mayor;
+                $menor;
+
+                if($a >= $b and $a >= $c){
+
+                    $mayor = $a;
+                    if($b <= $c){
+                        $menor = $b;
+                    }else{
+                        $menor = $c;
+                    }
+        
+                }elseif($a >= $b and $a <= $c){
+                    $mayor = $c;
+                    $menor = $b;
+
+                }elseif($a <= $b and $a >= $c){
+                    $mayor = $b;
+                    $menor = $c;
+                }else{
+
+                    $menor = $a;
+
+                    if($b >= $c){
+                        $mayor = $b;
+                    }else{
+                        $mayor = $c;
+                    }
+                }
+
+                echo "<p>El mayor es: ",$mayor," y el menor es: ",$menor,".</p>";
+                
+            ?>
+            <p>9. Given a year, deliver a message to point out whether it is a leap one or not. Leap years are
+            those which are divisible by 4, except for those which are divisible by 100 without being by
+            400.</p>
+            <?php
+
+                $leap;
+                $year = 2024;
+
+                if($year % 4 == 0 or ($year % 100 == 0 and $year % 400 != 0)){
+
+                    $leap = true;
+                }else{
+
+                    $leap = false;
+                }
+
+                if($leap){
+                    echo "<p>",$year," es bisiesto.</p>";
+                }else{
+                     echo "<p>",$year," no es bisiesto.</p>";
+                }
+                
+            ?>
+            <p>10. Deliver the sum of the numbers from 1 to 100.</p>
+            <?php
+
+                $sum = 0;
+                $nums = [];
+                for($i=1;$i<=100;$i++){
+                    
+                    $sum += $i;
+                    $nums[] = $i;
+                }
+
+                echo "<p>",$sum,"</p>";
+                echo "<p>",count($nums),"</p>";
+                
+                
+            ?>
+            <p>11. Deliver the factorial of 10.</p>
+            <?php
+
+                $factorial = 1;
+                $nums = [];
+                for($i=1;$i<=10;$i++){
+                    
+                    $factorial = $factorial * $i;
+                    $nums[] = $i;
+                }
+
+                echo "<p>",$factorial,"</p>";
+                echo "<p>",count($nums),"</p>";
+                
+            ?>
+            <p>12. Given an integer, deliver all its divisors.</p>
+            <?php
+
+                $n = 100;
+
+                for($i=1;$i<=$n;$i++){
+                    if($n % $i == 0){
+                        echo "<p>",$i,"</p>";
+                    }
+                }
+
+            ?>
+            <p>13. Given an integer, deliver a message to point out whether it is prime or not.</p>
+            <?php
+
+                $n = 13;
+                function esPrimo($n){
+                    if($n <= 1){
+                        return false;
+                    }
+
+                    for($i=2;$i < $n;$i++){
+                        if($n %  $i == 0){
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+
+                if(esPrimo($n)){
+                    echo "<p>Es primo";
+                }else{
+                    echo "<p>No es primo";
+                }
+
+            ?>
+            <p>14. Given a number, deliver all its prime divisors.</p>
+            <?php
+
+                $a = 100;
+               
+                for($i=1;$i<=$n;$i++){
+                    if($a % $i == 0){
+                        if(esPrimo($i)){
+                            echo "<p>El divisor s primo";
+                        }else{
+                            echo "<p>No es primo";
+                        }
+                    }
+                }
+
+
+
+            ?>
+
+            
+            
+
+
+            
 
         </main>
         <footer>

@@ -43,26 +43,6 @@
             font-size: 14px;
         }
 
-        input[type="email"],
-        select {
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 8px;
-            font-size: 14px;
-        }
-
-        select[multiple] {
-            height: 2.5em;
-            overflow: hidden;
-            transition: height 0.2s ease;
-        }
-
-        select[multiple]:focus {
-            height: 6em;
-            overflow: auto;
-        }
-
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
@@ -80,28 +60,17 @@
     <body>
 
 
-        <form action="school.php" method="GET">
+        <form action="sesionEj2.php" method="GET">
             <fieldset>
                 <legend>Complete with your personal data:</legend>
                 <div>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
                 </div>
 
                 <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div>
-                    <label for="role">Who are you?:</label>
-                    <div>
-                        <select id="role" name="role[]">
-                            <option value="Student">Student</option>
-                            <option value="Teacher">Teacher</option>
-                            <option value="Service Staff">Service Staff</option>
-                        </select>
-                    </div>
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname">
                 </div>
             </fieldset>
 

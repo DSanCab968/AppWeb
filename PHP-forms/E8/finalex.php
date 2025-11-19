@@ -32,11 +32,13 @@ session_start();
 
             }
 
+            setcookie("cliente_nombre", $_SESSION["nombre"], time() + 60*60*24*30);
+            
             echo "<p>Verifique si su pedido es correcto:</p>";
             echo "<p>Direccion de entrega:",$_SESSION["domicilio"],", ",$_SESSION["localidad"],"</p>";
             echo "<p>Tamaño: ",$_SESSION["size"]," Precio. ",$_SESSION["precio"],"</p>";
         ?>
-        <a href="finalex.html">Volver a seleccion de pedido</a>
+        <a href="finalex.html">Volver a seleccion de pedido</a><br>
         <a href="finalex2.php">Confirmar pedido</a>
     </body>
 </html>

@@ -36,7 +36,8 @@ session_start();
             
             echo "<p>Verifique si su pedido es correcto:</p>";
             echo "<p>Direccion de entrega:",$_SESSION["domicilio"],", ",$_SESSION["localidad"],"</p>";
-            echo "<p>Tamaño: ",$_SESSION["size"]," Precio. ",$_SESSION["precio"],"</p>";
+            echo "<p>Tamaño: ",$_SESSION["size"],"</p>";
+            echo "<p>Precio: ",$_SESSION["precio"],"</p>";
         ?>
         <a href="finalex.html">Volver a seleccion de pedido</a><br>
         <a href="finalex2.php">Confirmar pedido</a>

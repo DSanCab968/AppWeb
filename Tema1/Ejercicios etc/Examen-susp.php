@@ -18,7 +18,7 @@
 
         <?php 
 
-            $profesores = [
+            $arrayProfesores = [
                 [
                     "Name" => "María",
                     "Surname" => "Fernández García",

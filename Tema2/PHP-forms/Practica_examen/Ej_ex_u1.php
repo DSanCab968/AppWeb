@@ -3,56 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio posible examen</title>
+    <title>a</title>
     
 </head>
 <body>
 
-    <?php 
+    <header><h1>Ejercicio examen 1</h1></header>
+    <main>
+
+        <p>En php, crear un array bidimensional que almacene los profesores de una escuela. Cada profesor tendra los siguientes campos en el array:
+            "Name","Surname"(aqui habra 2 apellidos de la forma "Fernandez Garcia"),"DNI","Date"(sera la fecha de registro). El array sera asociativo.
+            Se desea imprimir por pantalla una tabla en la que habra 2 columnas: Codigo profesor y fecha. En dicha tabla solo apareceran los prifesores 
+            con las fechas de registro mas nueva y mas antigua. El codigo sera la primera letra del nombre, las 3 primeras de cada apellido y los 3 ultimos numeros
+            del dni
+        
+        </p>
+
+        <?php 
 
 
-        /*
-        A teacher recorded the marks (integers between 1 and 10) got by
-        her 20 students (named like this: Fernández Gil, María) in a
-        project, a class activity and an exam. Write a script to deliver a
-        table to show the students’ term marks bearing in mind that:
-        ●
-        ●
-        The students’ names will appear like this: María Fernández Gil.
-        (Use a function to get this change)
-        The class activity was 15% of the final mark, the project was 35%
-        and the exam was 50%.
-        */
+            $profesores = [
+                            [
+                                "Name" => "María",
+                                "Surname" => "Fernández García",
+                                "DNI" => "12345678A",
+                                "Date" => "2023/05/10"
+                            ],
+                            [
+                                "Name" => "Antonio",
+                                "Surname" => "López Ruiz",
+                                "DNI" => "87654321B",
+                                "Date" => "2021/02/15"
+                            ],
+                            [
+                                "Name" => "Lucía",
+                                "Surname" => "Sánchez Díaz",
+                                "DNI" => "11223344C",
+                                "Date" => "2024/09/20"
+                            ],
+                            [
+                                "Name" => "Pedro",
+                                "Surname" => "Martín Torres",
+                                "DNI" => "99887766D",
+                                "Date" => "2020/01/03"
+                            ],
+                            [
+                                "Name" => "Laura",
+                                "Surname" => "Gómez Pérez",
+                                "DNI" => "55443322E",
+                                "Date" => "2022/07/12"
+                            ]
+                        ];
 
+            function generarCodigo($a, $b, $c){
 
-        #array con estudiantes y notas random
+                $name = substr($a, 0 , 1);
+                $apellidosArr = explode(" ",$b);
+                $a1 = $apellidosArr[0];
+                $a2 = $apellidosArr[1];
+                $apellidos = substr($a1,0,3).substr($a2,0,3);
+                $dni = substr($c,5,3);
+                $codProf = $name.$apellidos.$dni;
+                return $codProf;
 
-        $estudiantes = [
-            ["Fernández Gil, María", 8, 7, 9],
-            ["López Ruiz, Antonio", 6, 5, 7],
-            ["Sánchez Díaz, Lucía", 9, 8, 10],
-            ["Martín Torres, Pedro", 5, 6, 6],
-            ["Gómez Pérez, Laura", 10, 9, 10],
-            ["Ramírez Soto, José", 7, 8, 8],
-            ["Moreno Rivas, Ana", 9, 7, 8],
-            ["Navarro Cruz, Javier", 6, 5, 6],
-            ["Vargas León, Carmen", 8, 9, 9],
-            ["Iglesias Mora, Sara", 7, 6, 7],
-            ["Domínguez Gil, Pablo", 6, 6, 8],
-            ["Prieto Lázaro, Elena", 9, 8, 10],
-            ["Hernández Ruiz, Marcos", 5, 7, 6],
-            ["García Salas, Laura", 10, 10, 10],
-            ["Suárez Campos, David", 7, 8, 7],
-            ["Blanco Pérez, Lucía", 8, 7, 9],
-            ["Ortega Gómez, Raúl", 6, 6, 7],
-            ["Delgado Martín, Alba", 9, 9, 10],
-            ["Cabrera Ortiz, Carlos", 7, 6, 7],
-            ["Reyes Torres, Julia", 8, 8, 9]
-        ];
+            }
 
+            function fechas($profesores){
+                $fechaMin = $profesores[0]["Date"];
+                $fechaMax = $profesores[0]["Date"];
 
+                foreach($profesores as $profesor){
 
-    ?>
+                    $fecha = $profesor["Date"];
+
+                    if($fecha < $fechaMin){
+                        $fechaMin = $fecha;
+                    }
+
+                    if($fecha > $fechaMax){
+                        $fechaMax = $fecha;
+                    }
+
+                }
+
+                return [$fechaMin,$fechaMax];
+
+            }
+
+            $fechas = fechas($profesores);
+            $fMin = $fechas[0];
+            $fMax = $fechas[1];
+            $profFiltrados = [];
+
+            foreach($profesores as $profesor){
+                if($profesor["Date"] == $fMin || $profesor["Date"] == $fMax){
+                    $profFiltrados[] = $profesor;
+                }
+
+            }
+
+            echo "<table border='1'>
+                    <tr>
+                        <th>Codigo profesor</th>
+                        <th>Fecha</th>
+                    </tr>";
+
+            foreach($profFiltrados as $profesor){
+
+                $codigo = generarCodigo($profesor["Name"],$profesor["Surname"],$profesor["DNI"]);
+                echo "<tr>
+                        <td>$codigo</td>
+                        <td>{$profesor['Date']}</td>
+                    </tr>";
+
+            }
+            echo "</table>";
+            
+        ?>
+    </main>
+    <footer>
+        <p>Daniel Sánchez Cabello - 2º ASIR B</p>
+    </footer>
 
 </body>
 </html>

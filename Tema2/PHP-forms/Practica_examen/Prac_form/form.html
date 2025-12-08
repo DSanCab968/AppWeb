@@ -11,13 +11,69 @@
             <h3>Objetivo: hacer el telebirria para usar con php</h3>
         </header>
         <main>
+            <h2>TELEBIRRIA</h2>
+            <h3>Para realizar su pedido, rellene el formulario</h3>
             <form action="session.php" method="post">
+                <fieldset>
+
+                    <legend>Datos y envio</legend>
+                    <div><label>Nombre</label><input type="text" requiered name="nombre"/></div>
+                    <div><label>Apellidos</label><input type="text" requiered name="apellidos"/></div>
+                    <div><label>Domicilio</label><input type="text" requiered name="domicilio"/></div>
+                    <div><label>Localidad</label><input type="text" requiered name="localidad"/></div>
+                    <div><label>Código postal</label><input type="number" requiered name="codigo"/></div>
+                    <div><label>Telefono</label><input type="tel" requiered name="telefono"/></div>
+                    <div><label>E-mail</label><input type="mail" name="email"/></div>
+
+                </fieldset>
+                <fieldset>
+
+                    <legend>Elija la opcion de entrega</legend>
+                    <div><input id="rLocal" name="entrega" type="radio" checked value="recogida en local"/><label for="rLocal">Recoger en local</label></div>
+                    <div><input id="eDomicilio" name="entrega" type="radio" value="envio a domicilio" /><label for="eDomicilio">Envio a domicilio</label></div>
+
+                </fieldset>
+                <fieldset>
+
+                    <legend>¿Quiere recibir nuestras ofertas?</legend>
+                    <div><input id="ofertaDom" type="checkbox" checked value="folleto a domicilio" name="ofertas"/><label for="ofertaDom">Enviar a domicilio</label></div>
+                    <div><input id="ofertaMail" type="checkbox" checked value="informacion por email" name="ofertas"/><label for="ofertaMail">Enviar por correo</label></div>
+
+                </fieldset>
+                <fieldset>
+
+                    <legend>Elija su menu</legend>
+                    <div><label>Tamaño del bocadillo</label></div>
+                    <select name="size" size="4">
+
+                        <option value="pequeño">Pequeño</option>
+                        <option value="mediano" selected>Mediano</option>
+                        <option value="grande">Grande</option>
+                        <option value="gigante">Gigante</option>
+
+                    </select>
+
+                    <div><label>Ingredientes</label></div>
+                    <select name="ingredientes[]" size="4" multiple>
+
+                        <option value="lechuga">Lechuga</option>
+                        <option value="tomate">Tomate</option>
+                        <option value="lomo">Lomo</option>
+                        <option value="atun">Atun</option>
+
+                    </select>
+
+                    <div><label>Sugerencias</label></div>
+                    <div><textarea name="sugerencias" cols="50" rows="10" placeholder="Escriba aqui su sugerencia"></textarea></div>
+                    <input type="submit" value="Enviar"/>
+
+                </fieldset>
                 
             </form>
 
         </main>
         <footer>
-
+            <p>Daniel Sánchez Cabello</p>
         </footer>
     </body>
 </html>

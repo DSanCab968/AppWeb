@@ -6,6 +6,11 @@ session_start();
     <body>
         <?php
 
+            setcookie("nombre", $_POST["Nombre"], time() + 86400 * 30, "/");
+            setcookie("apellidos", $_POST["Apellidos"], time() + 86400 * 30, "/");
+            setcookie("domicilio", $_POST["Domicilio"], time() + 86400 * 30, "/");
+            setcookie("localidad", $_POST["Localidad"], time() + 86400 * 30, "/");
+
             $_SESSION["nombre"] = $_POST["Nombre"];
             $_SESSION["apellidos"] = $_POST["Apellidos"];
             $_SESSION["domicilio"] = $_POST["Domicilio"];

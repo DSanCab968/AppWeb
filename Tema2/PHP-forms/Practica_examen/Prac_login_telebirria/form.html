@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Telebirria re-do</title>
+        <meta charset="UTF-8"/>
+
+    </head>
+    <body>
+        
+        <h2>Pedido</h2>
+        <form action="form_session.php" method="post">
+
+            <fieldset>
+                <legend>Datos de usuario</legend>
+                <div><label>Nombre</label><input type="text" name="nombre" required /></div>
+                <div><label>Direccion</label><input type="text" name="direccion" required /></div>
+                <div><label>Email</label><input type="mail" name="email" required /></div>
+            </fieldset>
+            <fieldset>
+                <legend>Seleccione el color</legend>
+                <div><input type="radio" id="amarillo" name="color" value="amarillo"/><label for="amarillo">Amarillo</label></div>
+                <div><input type="radio" id="negro" name="color" value="negro" checked/><label for="negro">Negro</label></div>
+                <div><input type="radio" id="blanco" name="color" value="blanco"/><label for="blanco">Blanco</label></div>
+            </fieldset>
+             <fieldset>
+                <legend>Accesorios extra</legend>
+                <select size="3" name="accesorios[]" multiple>
+                    <option value="auriculares">Auriculares</option>
+                    <option value="cargador">Cargador</option>
+                    <option value="funda">Funda</option>
+                </select>
+            </fieldset>
+            <input type="submit" value="Enviar"/>
+        </form>
+            
+        
+    </body>
+</html>

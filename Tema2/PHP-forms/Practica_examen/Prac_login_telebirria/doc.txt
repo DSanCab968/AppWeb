@@ -1,0 +1,13 @@
+He creado un esstructura de prueba asi:
+-login.html 
+-login.php 
+-registro.html 
+-registro.php 
+-form.html 
+-form_session.php 
+-checkeo_pedido.php 
+-logout.php 
+Basicamente, si te logeas con usuario y contraseña previamente registredos (en un array), guardaremos datos del usuario en sesion y estableceremos una cookie,
+el usuario podra ir al formulario y rellenarlo par apostriormente en form_session guardar la info y procesarla para al final en checkeo pedido enseñar el resumen del pedido
+y dar la opcion de cerrar sesion. Si en el login el usuario no esta registrado, podremos volver a la pagina de login o ir a la de resgistro para meter los datos y registrarlo.
+El problema es que no se bien como usar las cookies en este proyecto.

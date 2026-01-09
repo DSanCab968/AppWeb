@@ -33,5 +33,5 @@ try {
 echo "The connection failed. ", $exception->getmessage();
 }
 
-#el 2 es lo mismo, paso de hacerlo
+
 ?>

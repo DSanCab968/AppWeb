@@ -10,7 +10,7 @@
         $statement = $connection->prepare($sql);
         $statement->bindParam(1,$direccion);
         $statement->bindParam(2,$id_reader);
-        $id_reader = 5;
+        $id_reader = 4;
         $direccion = "Spring, 12 - 6ºD";
         $statement->execute();
         echo "<p>The reader with id ", $id_reader, " has this new address ", $direccion, ".</p>";

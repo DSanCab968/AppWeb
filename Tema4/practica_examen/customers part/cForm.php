@@ -19,7 +19,7 @@
                         <fieldset>
                             <select name='ciudad'>";
                              foreach ($statement->fetchAll(PDO::FETCH_COLUMN) as $city){
-                                echo "<option value='$city'>$city</option>";
+                                echo "<option value='",$city,"'>",$city,"</option>";
                             }
                             echo "</select>
                         </fieldset>

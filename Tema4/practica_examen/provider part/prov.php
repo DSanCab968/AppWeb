@@ -1,9 +1,11 @@
 <?php
 session_start();
 
-$_SESSION["NOMBRE"] = $_POST["nombre"];
+#$_SESSION["NOMBRE"] = $_POST["nombre"];
 
 #var_dump($_POST);
+
+#nota: no haria falta la preparada pero esta bien usarla igualmente
 
 $dsn = "mysql:host=localhost;dbname=YourStore";
 $user = "root";
@@ -13,16 +15,15 @@ try {
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT products.Name from products 
     inner join providers on products.Provider = providers.ProviderId
-    where providers.Name = ?
-    order by products.Name asc";
+    where providers.Name = ?";
 
     $statement = $connection->prepare($sql);
-    $nombre = $_SESSION["NOMBRE"];
+    $nombre = $_POST["nombre"];
     $statement->bindParam(1,$nombre);
     $statement->execute();
 
 
-    echo "<h3>PRODUCTOS DEL PROVEEDOR ".$_SESSION['NOMBRE'];
+    echo "<h1>PRODUCTOS DEL PROVEEDOR ".$_POST["nombre"]."</h1>";
     echo "<ul>";
     $products = $statement->fetchAll(PDO::FETCH_ASSOC);
     foreach ($products as $product){

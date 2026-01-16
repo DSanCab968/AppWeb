@@ -4,6 +4,7 @@ session_start();
 $_SESSION["CIUDAD"] = $_POST["ciudad"];
 
 #var_dump($_POST);
+#meter tambieen lo del isset y empty
 
 $dsn = "mysql:host=localhost;dbname=YourStore";
 $user = "root";

@@ -13,6 +13,7 @@ $password = "";
 try {
     $connection = new PDO($dsn, $user, $password);
     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
     $sql = "SELECT products.Name from products 
     inner join providers on products.Provider = providers.ProviderId
     where providers.Name = ?";

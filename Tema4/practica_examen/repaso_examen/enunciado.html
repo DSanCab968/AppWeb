@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio examen</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            margin: 40px;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+        }
+        .bloque {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>EXAMEN PRÁCTICO DE PHP</h1>
+    <p><strong>Implantación de Aplicaciones Web</strong></p>
+    <p><strong>Duración:</strong> 2–3 horas</p>
+    <p><strong>Material permitido:</strong> apuntes en papel</p>
+    <p><strong>Lenguaje:</strong> PHP</p>
+    <p><strong>Base de datos:</strong> MySQL</p>
+    <p><strong>Acceso a datos:</strong> PDO obligatorio</p>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>ENUNCIADO GENERAL</h2>
+
+    <p>
+    Se desea desarrollar un <strong>Sistema de Gestión de Eventos</strong> para una empresa llamada
+    <strong>EventPro</strong>, que permita gestionar organizadores, eventos y asistentes mediante una
+    aplicación web desarrollada en PHP.
+    </p>
+
+    <p>La aplicación debe utilizar:</p>
+    <ul>
+        <li>Formularios HTML con método <strong>POST</strong></li>
+        <li>Variables <code>$_POST</code></li>
+        <li>Variables de sesión <code>$_SESSION</code></li>
+        <li>Acceso a bases de datos mediante <strong>PDO</strong></li>
+        <li>Sentencias SQL preparadas</li>
+        <li>Estructuras de control (<code>if</code>, <code>foreach</code>)</li>
+        <li>Listas desplegables (<code>&lt;select&gt;</code>)</li>
+    </ul>
+    </div>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>PARTE 1. CREACIÓN DE LA BASE DE DATOS (2 puntos)</h2>
+
+    <p>
+    Escribe un script PHP llamado <code>crear_bd.php</code> que realice las siguientes acciones:
+    </p>
+
+    <ol>
+        <li>Cree una base de datos llamada <strong>eventpro</strong> si no existe.</li>
+        <li>Cree las siguientes tablas con sus relaciones:</li>
+    </ol>
+
+    <h3>Tabla <code>organizers</code></h3>
+    <ul>
+        <li>id_organizer (INT, clave primaria, AUTO_INCREMENT)</li>
+        <li>name (VARCHAR(100))</li>
+        <li>email (VARCHAR(100))</li>
+        <li>phone (VARCHAR(15))</li>
+    </ul>
+
+    <h3>Tabla <code>events</code></h3>
+    <ul>
+        <li>id_event (INT, clave primaria, AUTO_INCREMENT)</li>
+        <li>name (VARCHAR(150))</li>
+        <li>date (DATE)</li>
+        <li>location (VARCHAR(255))</li>
+        <li>id_organizer (INT, clave foránea a organizers)</li>
+    </ul>
+
+    <h3>Tabla <code>attendees</code></h3>
+    <ul>
+        <li>id_attendee (INT, clave primaria, AUTO_INCREMENT)</li>
+        <li>name (VARCHAR(100))</li>
+        <li>email (VARCHAR(100))</li>
+        <li>phone (VARCHAR(15))</li>
+        <li>id_event (INT, clave foránea a events)</li>
+    </ul>
+
+    <p>El script deberá mostrar un mensaje indicando si la base de datos y las tablas se han creado correctamente.</p>
+    </div>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>PARTE 2. GESTIÓN DE ORGANIZADORES (2 puntos)</h2>
+
+    <h3>2.1 Alta de organizadores</h3>
+    <p>
+    Crea un formulario HTML que permita introducir:
+    </p>
+    <ul>
+        <li>Nombre</li>
+        <li>Email</li>
+        <li>Teléfono</li>
+    </ul>
+
+    <p>
+    Los datos se enviarán por POST a un script PHP que inserte el organizador en la base de datos
+    y muestre un mensaje de confirmación.
+    </p>
+
+    <h3>2.2 Modificación de organizadores</h3>
+    <ol>
+        <li>Mostrar una lista desplegable con los nombres de los organizadores ordenados alfabéticamente.</li>
+        <li>Al seleccionar uno, mostrar un formulario con sus datos actuales.</li>
+        <li>Permitir modificar email y teléfono.</li>
+        <li>Actualizar los datos en la base de datos.</li>
+    </ol>
+    </div>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>PARTE 3. GESTIÓN DE EVENTOS (2,5 puntos)</h2>
+
+    <h3>3.1 Creación de eventos</h3>
+    <p>
+    Formulario para:
+    </p>
+    <ul>
+        <li>Nombre del evento</li>
+        <li>Fecha</li>
+        <li>Localización</li>
+        <li>Organizador (lista desplegable)</li>
+    </ul>
+
+    <h3>3.2 Listado de eventos por fecha</h3>
+    <p>
+    Formulario para introducir una fecha y mostrar:
+    </p>
+    <ul>
+        <li>Eventos de esa fecha</li>
+        <li>Nombre del organizador</li>
+    </ul>
+
+    <h3>3.3 Eliminación de eventos</h3>
+    <p>
+    Añadir opción para eliminar un evento y mostrar mensaje de confirmación.
+    </p>
+    </div>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>PARTE 4. REGISTRO DE ASISTENTES (2 puntos)</h2>
+
+    <h3>4.1 Registro de asistentes</h3>
+    <ul>
+        <li>Nombre</li>
+        <li>Email</li>
+        <li>Teléfono</li>
+        <li>Evento (lista desplegable)</li>
+    </ul>
+
+    <h3>4.2 Listado de asistentes por evento</h3>
+    <p>
+    Seleccionar un evento y mostrar una tabla con:
+    </p>
+    <ul>
+        <li>Nombre</li>
+        <li>Email</li>
+        <li>Teléfono</li>
+    </ul>
+    </div>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>PARTE 5. USO DE SESIONES (1,5 puntos)</h2>
+
+    <p>
+    Al acceder por primera vez:
+    </p>
+    <ul>
+        <li>Pedir el nombre del usuario</li>
+        <li>Guardar el nombre en <code>$_SESSION</code></li>
+    </ul>
+
+    <p>
+    En todas las páginas mostrar:
+    </p>
+    <p><strong>“Bienvenido/a, NOMBRE_USUARIO”</strong></p>
+
+    <p>
+    Añadir opción para cerrar sesión y destruir los datos de sesión.
+    </p>
+    </div>
+
+    <hr>
+
+    <div class="bloque">
+    <h2>PARTE 6. REQUISITOS GENERALES (0,5 puntos)</h2>
+    <ul>
+        <li>Uso obligatorio de PDO</li>
+        <li>Sentencias preparadas</li>
+        <li>Uso de <code>isset()</code></li>
+        <li>Código claro y bien estructurado</li>
+    </ul>
+    </div>
+
+    <hr>
+
+    <h2>CRITERIOS DE EVALUACIÓN</h2>
+    <ul>
+        <li>Uso correcto de formularios y POST</li>
+        <li>Gestión de sesiones</li>
+        <li>Consultas SQL correctas</li>
+        <li>Listas desplegables funcionales</li>
+        <li>Relaciones entre tablas</li>
+        <li>Claridad del código</li>
+    </ul>
+</body>
+</html>

@@ -13,8 +13,8 @@ session_start();
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" >
         <fieldset>
             <legend>Introduzca sus credenciales</legend>
-            <div><label>Username <input type="text" name="user" requiered/><label></div>
-            <div><label>Password <input type="password" name="pass" requiered/><label></div>
+            <div><label>Username <input type="text" name="user" required/><label></div>
+            <div><label>Password <input type="password" name="pass" required/><label></div>
         </fieldset>
         <input type="submit" value="Log in"/>
     </form>

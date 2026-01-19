@@ -45,7 +45,7 @@ session_start();
                 echo "<div><p>Seleccione que desea hacer:</p></div>";
                 echo "<div><a href='../organizers/organizersForm.php'>Ir al formulario de organizadores</a></div>";
                 echo "<div><a href='../events/eventForm.php'>Ir al formulario de eventos</a></div>";
-                #echo "<div><a href='formPedido.html'>Ir al formulario</a></div>";
+                echo "<div><a href='../attendees/attendeesForm.php'>Ir al formulario de asistentes</a></div>";
 
 
                 #header("Location: formPedido.php");

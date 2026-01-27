@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Introduzca los datos de la uva</h1>
+    <form action="insertGrape.php" method="post">
+        <legend>Introduzca los datos</legend>
+        <fieldset>
+            <div><label>Variety: </label><input type="text" name="vGrape" required></div>
+            <div><label>Origin: </label><input type="text" name="oGrape" required></div>
+            <div><label>Skin colour: </label><input type="text" name="scGrape" required></div>
+            <div><label>Flavour: </label><input type="text" name="fGrape" required></div>
+        </fieldset>
+        <input type="submit" value="send"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Introduzca los datos del vino</h1>
+    <form action="insertWine.php" method="post">
+        <legend>Introduzca los datos</legend>
+        <fieldset>
+            <div><label>Name: </label><input type="text" name="nWine" required></div>
+            <div><label>Winery: </label><input type="text" name="nWinery" required></div>
+            <div><label>Region: </label><input type="text" name="nRegion" required></div>
+            <div><label>Type</label></div>
+            <select name="type">
+                <option value="red">Red</option>
+                <option value="white">White</option>
+                <option value="rose">Rose</option>
+                <option value="sparkling">Sparkling</option>
+                <option value="dessert">Dessert</option>
+                <option value="fortified">Fortified</option>
+            </select>
+        <div><label>Aging</label></div>
+            <select name="aging">
+                <option value="young">Young</option>
+                <option value="vintage">Vintage</option>
+                <option value="reserve">Reserve</option>
+                <option value="grandreserve">Grand Reserve</option>
+            </select>
+        </fieldset>
+        <input type="submit" value="send"/>
+    </form>
+</body>
+</html>
